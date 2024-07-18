@@ -1,34 +1,43 @@
 {
-	"name": "lucia-repository",
-	"version": "1.0.0",
-	"description": "Authentication, simple and clean",
+	"name": "lucia",
+	"version": "3.2.0",
+	"description": "A simple and flexible authentication library",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"module": "dist/index.js",
+	"type": "module",
+	"files": [
+		"/dist/",
+		"CHANGELOG.md"
+	],
 	"scripts": {
-		"publish-setup": "pnpm i --no-frozen-lockfile && cd packages/lucia && pnpm build && cd ../adapter-test && pnpm build && cd ../../",
-		"format": "pnpm exec prettier --write . --plugin=prettier-plugin-astro",
-		"format:docs": "pnpm exec prettier --write docs --plugin=prettier-plugin-astro",
-		"preinstall": "npx only-allow pnpm",
-		"auri.format": "pnpm format",
-		"auri.publish_setup": "pnpm publish-setup"
+		"build": "rm -rf dist/* && tsc --project tsconfig.build.json",
+		"format": "prettier -w .",
+		"lint": "eslint src"
 	},
+	"keywords": [
+		"lucia",
+		"lucia-auth",
+		"authentication",
+		"auth"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/lucia-auth/lucia"
 	},
-	"keywords": [],
-	"author": "pilcrowOnPaper",
+	"author": "pilcrowonpaper",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "~18.15.13",
-		"@typescript-eslint/eslint-plugin": "^5.59.6",
-		"@typescript-eslint/parser": "^5.59.6",
-		"auri": "^0.7.4",
-		"eslint": "^8.40.0",
-		"eslint-config-prettier": "^8.8.0",
+		"@eslint/js": "^9.7.0",
+		"@types/node": "20.x",
+		"eslint": "^8.57.0",
 		"prettier": "^2.8.8",
-		"prettier-plugin-astro": "^0.10.0",
-		"prettier-plugin-tailwindcss": "^0.2.8",
-		"shx": "^0.3.4",
-		"typescript": "latest"
+		"typescript": "^5.5.3",
+		"typescript-eslint": "^7.16.1",
+		"vitest": "^2.0.3"
+	},
+	"dependencies": {
+		"@oslojs/encoding": "0.3.0"
 	},
 	"engines": {
 		"node": "20.x",
