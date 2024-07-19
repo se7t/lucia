@@ -1,5 +1,5 @@
 import { Cookie, parseCookieHeader } from "./cookie.js";
-import { generateIdFromEntropySizeWithWebCrypto } from "./utils.js";
+import { generateIdFromEntropySize } from "./utils.js";
 
 export class Lucia<_Session extends LuciaSession, _User extends LuciaUser> {
 	public sessionExpiresInSeconds: number;
@@ -101,15 +101,15 @@ export class Lucia<_Session extends LuciaSession, _User extends LuciaUser> {
 }
 
 export class DatabaseError extends Error {
-	constructor(message: string, cause: any) {
+	constructor(message: string, cause: unknown) {
 		super(`Database error: ${message}`, {
 			cause
 		});
 	}
 }
 
-export function generateSessionIdWithWebCrypto(): string {
-	return generateIdFromEntropySizeWithWebCrypto(25);
+export function generateSessionId(): string {
+	return generateIdFromEntropySize(25);
 }
 
 export interface DatabaseAdapter<_Session extends LuciaSession, _User extends LuciaUser> {

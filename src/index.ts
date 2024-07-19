@@ -1,6 +1,6 @@
-export { Lucia, generateSessionIdWithWebCrypto } from "./lucia.js";
+export { Lucia, generateSessionId } from "./lucia.js";
 export { Cookie } from "./cookie.js";
-export { generateIdFromEntropySizeWithWebCrypto, verifyRequestOrigin } from "./utils.js";
+export { generateIdFromEntropySize, verifyRequestOrigin } from "./utils.js";
 
 export type {
 	DatabaseAdapter,

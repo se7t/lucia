@@ -106,7 +106,7 @@ export class Cookie {
 			options.expires = new Date(expires);
 		}
 		const maxAge = this.attributes.get("max-age") ?? null;
-		if (expires !== null) {
+		if (maxAge !== null) {
 			options.maxAge = Number(maxAge);
 		}
 		const priority = this.attributes.get("priority")?.toLowerCase() ?? null;

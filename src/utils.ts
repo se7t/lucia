@@ -27,7 +27,7 @@ function parseURL(url: URL | string): URL | null {
 	}
 }
 
-export function generateIdFromEntropySizeWithWebCrypto(size: number): string {
+export function generateIdFromEntropySize(size: number): string {
 	if (size % 5 !== 0) {
 		throw new TypeError("Argument 'size' must be a multiple of 5");
 	}
