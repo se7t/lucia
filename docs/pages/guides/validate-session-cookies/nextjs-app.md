@@ -74,7 +74,7 @@ async function Page() {
 }
 ```
 
-For Route Handlers, since Next.js does not implement CSRF protection for Route Handlers, **CSRF protection must be implemented when dealing with forms** if you're dealing with forms. This can be easily done by comparing the `Origin` and `Host` header. We recommend using middleware for this.
+For Route Handlers, since Next.js does not implement CSRF protection for Route Handlers, **CSRF protection must be implemented when dealing with forms**. This can be easily done by comparing the `Origin` and `Host` header. We recommend using middleware for this.
 
 ```ts
 // middleware.ts
